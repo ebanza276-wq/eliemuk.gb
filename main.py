@@ -149,6 +149,24 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
             "comments":20,
             "shares":10,
         },
+        {   "etat":0,
+            "id":4,
+            "creator_nom":"bella",
+            "avatar":"https://picsum.photos/id/64/200/200",
+            "contenu": [
+        "https://picsum.photos/500/500?1",
+        "https://picsum.photos/500/500?2",
+        "https://picsum.photos/500/500?3",
+        "https://picsum.photos/500/500?4",
+    ],
+            "description": """
+Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquées. Leur présence suffit. Entre douceur et confiance, ce portrait capture un instant simple mais puissant, celui où l’on est pleinement soi-même, sans filtre ni artifice. ✨ 
+            #portrait #naturel #beauté #authenticité #lifestyle #confidence #photography
+""",
+            "likes":12,
+            "comments":20,
+            "shares":10,
+        },
     ]
     videos = [
         {"creator_nom": "Bianca Herrera", "contenu": "https://www.w3schools.com/html/mov_bbb.mp4", "likes": "36.6K", "medias": "104", "videos": "9"},
@@ -262,9 +280,9 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
         etat = p["etat"]
 
         if etat == 1:
-            if contenu.endswith(".mp4"):
+            if isinstance(contenu, str) and contenu.endswith(".mp4"):
                 media = video_preview(contenu)
-            elif contenu.startswith("https"):
+            elif isinstance(contenu, str) and contenu.startswith("https"):
                 media = ft.Container(
                 content=ft.Image(
                 src=contenu,
@@ -275,7 +293,28 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
                 border_radius=20,
                 clip_behavior=ft.ClipBehavior.ANTI_ALIAS, # 🔥 Obligatoire pour couper l'image aux angles
                 )
-
+            elif isinstance(contenu, list):
+                media = ft.Container(
+                height=360,
+                content=ft.GridView(
+                runs_count=2,
+                spacing=1,
+                run_spacing=1,
+                expand=True,
+                controls=[
+                    ft.Container(
+                        border_radius=10,
+                        clip_behavior=ft.ClipBehavior.ANTI_ALIAS,
+                        content=ft.Image(
+                            src=img,
+                            fit="cover",
+                            expand=True,
+                        ),
+                    )
+                    for img in contenu
+                ],
+            ),
+        )
             else:
                 media = ft.Container(
                 content=hashtags(contenu)

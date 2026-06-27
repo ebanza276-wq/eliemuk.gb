@@ -154,11 +154,28 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
             "creator_nom":"bella",
             "avatar":"https://picsum.photos/id/64/200/200",
             "contenu": [
-        "https://picsum.photos/500/500?1",
-        "https://picsum.photos/500/500?2",
-        "https://picsum.photos/500/500?3",
-        "https://picsum.photos/500/500?4",
-    ],
+            "https://picsum.photos/500/500?1",
+            "https://picsum.photos/500/500?2",
+            "https://picsum.photos/500/500?3",
+            "https://picsum.photos/500/500?4",
+            ],
+            "description": """
+Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquées. Leur présence suffit. Entre douceur et confiance, ce portrait capture un instant simple mais puissant, celui où l’on est pleinement soi-même, sans filtre ni artifice. ✨ 
+            #portrait #naturel #beauté #authenticité #lifestyle #confidence #photography
+""",
+            "likes":12,
+            "comments":20,
+            "shares":10,
+        },
+        {   "etat":0,
+            "id":5,
+            "creator_nom":"bella",
+            "avatar":"https://picsum.photos/id/64/200/200",
+            "contenu": [
+            "https://picsum.photos/500/500?1",
+            "https://picsum.photos/500/500?2",
+            "https://picsum.photos/500/500?3",
+            ],
             "description": """
 Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquées. Leur présence suffit. Entre douceur et confiance, ce portrait capture un instant simple mais puissant, celui où l’on est pleinement soi-même, sans filtre ni artifice. ✨ 
             #portrait #naturel #beauté #authenticité #lifestyle #confidence #photography
@@ -294,14 +311,55 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
                 clip_behavior=ft.ClipBehavior.ANTI_ALIAS, # 🔥 Obligatoire pour couper l'image aux angles
                 )
             elif isinstance(contenu, list):
-                media = ft.Container(
-                height=360,
-                content=ft.GridView(
-                runs_count=2,
-                spacing=3,
-                run_spacing=3,
-                expand=True,
-                controls=[
+                if len(contenu) == 3:
+                    media = ft.Row(
+                    [
+                    ft.Container(
+                        border_radius=10,
+                        content=ft.Image(
+                        src=contenu[0],
+                        fit="cover",
+                        ),
+                    expand=1,
+                    height=300,
+                    ),
+                    ft.Column(
+                    [
+                    ft.Container(
+                        border_radius=10,
+                        content=ft.Image(
+                            src=contenu[1],
+                            fit="cover",
+                        ),
+                        expand=1,
+                    ),
+                    ft.Container(
+                        border_radius=10,
+                        content=ft.Image(
+                            src=contenu[2],
+                            fit="cover",
+                        ),
+                        expand=1,
+                    ),
+                    ],
+                    expand=1,
+                    height=300,
+                    spacing=2,
+                    ),
+                    ],
+                    spacing=2,
+                    )
+
+    # 2, 4, 5, 6... images
+                else:
+                    media = ft.Container(
+                    height=350,
+                    content=ft.GridView(
+                    runs_count=2,
+                    spacing=3,
+                    run_spacing=3,
+                    expand=True,
+                    controls=[
                     ft.Container(
                         border_radius=10,
                         clip_behavior=ft.ClipBehavior.ANTI_ALIAS,
@@ -313,8 +371,8 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
                     )
                     for img in contenu
                 ],
-            ),
-        )
+                ),
+                )
             else:
                 media = ft.Container(
                 content=hashtags(contenu)

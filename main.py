@@ -298,8 +298,8 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
                 height=360,
                 content=ft.GridView(
                 runs_count=2,
-                spacing=1,
-                run_spacing=1,
+                spacing=3,
+                run_spacing=3,
                 expand=True,
                 controls=[
                     ft.Container(

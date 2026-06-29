@@ -1,6 +1,7 @@
 import flet as ft
 import flet_video as ftv
 from page_explore import page_explore
+from page_message import page_message
 
 def main(page: ft.Page):
     page.title = "Publications"
@@ -189,6 +190,22 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
         {"creator_nom": "Bianca Herrera", "contenu": "https://www.w3schools.com/html/mov_bbb.mp4", "likes": "36.6K", "medias": "104", "videos": "9"},
         {"creator_nom": "Lovina", "contenu": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4", "likes": "12.4K", "medias": "45", "videos": "2"}
     ]
+    messages = [
+    {
+        "nom": "Alice",
+        "secondary_text": "Salut, comment vas-tu ?",
+        "avatar": "https://picsum.photos/100/100?img=10",
+        "heure": "12:30",
+        "non_lus": 2,
+    },
+    {
+        "nom": "Bob",
+        "secondary_text": "Merci beaucoup !",
+        "avatar": "https://picsum.photos/100/100?img=11",
+        "heure": "11:45",
+        "non_lus": 0,
+    },
+]
     decouvrir_data = [
         {
             "nom": "Bianca Herrera",
@@ -698,7 +715,7 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
         elif selected_index == 1:
             contenu.content = page_explore(recommandes_data,decouvrir_data,videos,historique_recherche,state,update_page)
         elif selected_index == 4:
-            contenu.content = ft.Text("Send")
+            contenu.content = page_message(messages)
         elif selected_index == 5:
             contenu.content = ft.Text("Send")
 

@@ -78,13 +78,19 @@ def creer_message(msg):
     )
 col = ft.Column(scroll="auto")
 search_msg = ft.TextField(
-    hint_text="Rechercher une conversation...",
-    prefix_icon=ft.Icons.SEARCH,
-    border_radius=20,
-    filled=True,
-    bgcolor="#2a2a2a",
-    #on_change=lambda e: filter_messages(e.control.value)
-    )
+                    hint_text="Rechercher des conversation...",
+                    prefix_icon=ft.Icons.SEARCH,
+                    bgcolor="#1E1E1E",
+                    border_radius=20,
+                    border_color=ft.Colors.TRANSPARENT,
+                    focused_border_color="#3A3A3A",
+                    cursor_color="white",
+                    text_style=ft.TextStyle(color="white"),
+                    hint_style=ft.TextStyle(color="#888888"),
+                    filled=True,
+                    content_padding=15,
+                    expand=True,
+                )
 def page_message(messages):
     col.controls = [
         ft.Text("❤️ Messages", size=24, weight="bold"),

@@ -1,0 +1,10 @@
+
+[project]
+name = "annoncesapp"
+version = "0.1.0"
+dependencies = ["flet"]
+
+[tool.flet]
+org = "com.elie.annonces"
+product = "AnnoncesApp"
+assets_dir = "assets"

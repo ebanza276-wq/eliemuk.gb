@@ -778,4 +778,7 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
     page.on_view_pop = view_pop
     contenu = ft.Container(expand=True, content=page_accueil())
     page.add(contenu)
-ft.app(target=main)
+
+ft.run(main)
+
+#ft.app(target=main)

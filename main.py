@@ -817,6 +817,6 @@ Il y a des personnes qui n’ont pas besoin de parler fort pour être remarquée
     contenu = ft.Container(expand=True, content=page_accueil())
     page.add(contenu)
 
-ft.run(main)
+ft.run(main, assets_dir="assets")
 
 #ft.app(target=main)

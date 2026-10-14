@@ -17,7 +17,45 @@ def main(page: ft.Page):
     selected_index = 0
     video_url = None
     running = False
-    stories = []
+    #stories = []
+    stories = [
+    {
+        "id": 1,
+        "nom": "Alice Martin",
+        "username": "@alicemartin",
+        "avatar": "https://i.pravatar.cc/100?img=1",
+        "contenu": "https://picsum.photos/500/800?random=1",
+        "type": "image",
+        "vue": False,
+    },
+    {
+        "id": 2,
+        "nom": "Bianca Herrera",
+        "username": "@biancaherrera",
+        "avatar": "https://i.pravatar.cc/100?img=5",
+        "contenu": "https://picsum.photos/500/800?random=2",
+        "type": "image",
+        "vue": False,
+    },
+    {
+        "id": 3,
+        "nom": "Lovina",
+        "username": "@lovina",
+        "avatar": "https://i.pravatar.cc/100?img=9",
+        "contenu": "https://www.w3schools.com/html/mov_bbb.mp4",
+        "type": "video",
+        "vue": False,
+    },
+    {
+        "id": 4,
+        "nom": "Bella",
+        "username": "@bella",
+        "avatar": "https://i.pravatar.cc/100?img=10",
+        "contenu": "https://picsum.photos/500/800?random=4",
+        "type": "image",
+        "vue": True,
+    },
+]
     state = {"explore_tab": "découvrir"}
     publications = [
         {   "etat":1,

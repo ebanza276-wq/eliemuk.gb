@@ -2,7 +2,7 @@
 [project]
 name = "annoncesapp"
 version = "0.1.0"
-dependencies = ["flet"]
+dependencies = ["flet","flet-video"]
 
 [tool.flet]
 org = "com.elie.annonces"

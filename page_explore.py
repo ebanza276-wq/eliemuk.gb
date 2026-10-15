@@ -367,7 +367,7 @@ def view_video(videos):
                                 playlist=[ftv.VideoMedia(v["contenu"])],
                                 autoplay=True,
                                 expand=True,
-                                show_controls=False,
+                                #show_controls=False,
                             ),
                             # Dégradé supérieur pour masquer la barre d'onglets proprement
                             ft.Container(

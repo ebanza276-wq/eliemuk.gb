@@ -375,7 +375,7 @@ def view_video(videos):
                                 gradient=ft.LinearGradient(
                                     begin=ft.Alignment.TOP_CENTER,
                                     end=ft.Alignment.BOTTOM_CENTER,
-                                    colors=[ft.Colors.BLACK54, ft.Colors.TRANSPARENT]
+                                    colors=[ft.Colors.BLACK_54, ft.Colors.TRANSPARENT]
                                 )
                             ),
                             # Infos en overlay inférieur
